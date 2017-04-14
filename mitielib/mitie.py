@@ -701,6 +701,7 @@ _f.mitie_categorize_text_with_extractor.argtypes = (ctypes.c_void_p, ctypes.c_vo
 class text_categorizer:
     def __init__(self, filename, fe_filename=None):
         filename = to_bytes(filename)
+        fe_filename = to_bytes(fe_filename)
         self.__mitie_free = _f.mitie_free
         if isinstance(filename, ctypes.c_void_p):
             self.__obj = filename
